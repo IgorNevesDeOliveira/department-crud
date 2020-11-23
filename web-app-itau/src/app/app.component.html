@@ -1,0 +1,105 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<h1>Cadastro de Departamento</h1>
+<form [formGroup]="form" (ngSubmit)="onGravar(form.value)">
+  <fieldset>
+    <div class="row">
+      <div class="form-control-input">
+        <label for="codigo">Código:</label>
+        <input id="codigo" type="text" formControlName="code" />
+      </div>
+
+      <div class="form-control-input">
+        <label for="nome">Nome:</label>
+        <input id="nome" type="text" formControlName="name" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-control-input">
+        <label for="local">Local:</label>
+        <input id="local" type="text" formControlName="local" />
+      </div>
+
+      <div class="form-control-input">
+        <label for="cidade">Cidade:</label>
+        <input id="cidade" type="text" formControlName="city" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-control-select">
+        <label for="estado">Estado:</label>
+        <select id="estado" formControlName="state">
+          <option value="" disabled selected>Selecione</option>
+          <option value="SP">SP</option>
+          <option value="RJ">RJ</option>
+          <option value="GO">GO</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <fieldset>
+        <legend>Diretoria</legend>
+        <ul class="horizontal-list">
+          <li>
+            <input
+              id="diretoria-eis"
+              type="radio"
+              name="board"
+              value="E.I.S"
+              formControlName="board"
+            />
+            <label for="diretoria-eis">E.I.S</label>
+          </li>
+          <li>
+            <input
+              id="diretoria-recuperacao"
+              type="radio"
+              name="board"
+              value="Recuperação"
+              formControlName="board"
+            />
+            <label for="diretoria-recuperacao">Recuperação</label>
+          </li>
+          <li>
+            <input
+              id="diretoria-negocios"
+              type="radio"
+              name="board"
+              value="Negócios"
+              formControlName="board"
+            />
+            <label for="diretoria-negocios">Negócios</label>
+          </li>
+        </ul>
+      </fieldset>
+    </div>
+
+    <div class="row">
+      <button class="float-right" type="submit">Gravar</button>
+    </div>
+  </fieldset>
+</form>
+
+<br />
+
+<table>
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Nome</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let departamento of departamentos">
+      <td>{{ departamento.code }}</td>
+      <td>{{ departamento.name }}</td>
+      <td class="table-actions">
+        <button type="button" (click)="onEditar(departamento)">Editar</button>
+        <button type="button" (click)="onDeletar(departamento)">Deletar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

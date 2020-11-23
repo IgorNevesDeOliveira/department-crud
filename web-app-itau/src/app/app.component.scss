@@ -1,0 +1,63 @@
+.row {
+  margin-bottom: 16px;
+  clear: both;
+}
+
+.row .float-right {
+  float: right;
+}
+
+.row .form-control-input {
+  display: inline-block;
+  width: 200px;
+  margin-right: 24px;
+}
+
+.row .form-control-input label {
+  display: block;
+}
+
+.row .form-control-input input {
+  display: block;
+  width: 100%;
+}
+
+.row .form-control-select label {
+  margin-right: 8px;
+}
+
+.row .form-control-select select {
+  width: 120px;
+}
+
+.horizontal-list {
+  padding: 0px;
+}
+
+.horizontal-list li {
+  display: inline-block;
+  width: 180px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table thead {
+  background-color: lightblue;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+.table-actions {
+  text-align: center;
+}
+
+.table-actions button:first-child {
+  margin-right: 8px;
+}
